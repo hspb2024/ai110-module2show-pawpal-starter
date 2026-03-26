@@ -71,6 +71,8 @@ classDiagram
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
 
+No design changes were made during implementation. The four classes and their attributes and methods remained exactly as defined in the initial UML diagram.
+
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
