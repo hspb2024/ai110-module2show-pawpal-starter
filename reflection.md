@@ -82,10 +82,16 @@ No design changes were made during implementation. The four classes and their at
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
 
+The constraints it will consider are the amount of time the owner has in a day and the level of priority of each task. The scheduler will fill the day by choosing the most important tasks first and continue until there's no time left for the next task.
+
+I have decided that the most important factor was the level of priority of each task. This was due to the fact that there are tasks that must be completed, like giving medication to a pet. The amount of time was the second most important factor. This was due to the fact that regardless of the importance of the task, the owner only had so much time in a day. The time of day was used as a tiebreaker if two tasks had the same level of priority.
+
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+
+The conflict detector only checks if two tasks are scheduled at exactly the same time. However, it does not verify if two tasks might have a conflict by checking if the end time of one task might overlap with the start time of the other. For example, if one task has a duration of 30 minutes and starts at 8:00, and another task starts at 8:15, it will not be detected by this function. However, it will be running at the same time. This trade-off is acceptable for now. However, it does catch obvious errors like two tasks being scheduled at the same time by accident. In the future, we could extend this function by also checking the duration of each task.
 
 ---
 
