@@ -32,6 +32,15 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+## Smarter Scheduling
+
+Phase 3 adds four new features to make the scheduler more useful:
+
+- **Sort by time** — Tasks can be listed in order from earliest to latest based on their scheduled time.
+- **Filter by pet or status** — You can view only the tasks for a specific pet, or only tasks that are done or still pending.
+- **Recurring tasks** — Tasks can be set to repeat daily or weekly. When you mark one complete, the next occurrence is automatically added.
+- **Conflict detection** — The scheduler warns you if two tasks are set to start at the exact same time.
+
 ### Suggested workflow
 
 1. Read the scenario carefully and identify requirements and edge cases.
