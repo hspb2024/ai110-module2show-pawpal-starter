@@ -41,12 +41,12 @@ Run the tests with:
 python3 -m pytest
 ```
 
-The 26 tests cover:
-- **Sorting correctness** — tasks return in chronological order; unscheduled tasks sort last
-- **Recurrence logic** — completing a daily/weekly task auto-adds the next occurrence; one-time tasks raise an error
-- **Conflict detection** — flags two tasks at the same time; ignores tasks with no scheduled time
-- **Priority & planning** — plan respects the time budget, skips completed tasks, and puts high-priority tasks first
-- **Pet & Owner management** — add/remove tasks, case-insensitive pet filtering, status filtering, and edge cases like a pet with no tasks
+The 26 tests include:
+- **Sorting correctness**: tasks returned in chronological order, unscheduled tasks sort last
+- **Recurrence logic**: daily/weekly tasks auto-add next occurrence, one-time tasks raise error
+- **Conflict detection**: detects two tasks at same time, ignores tasks without scheduled time
+- **Priority & planning**: respects time budget, skips completed tasks, prioritizes high priority tasks
+- **Pet & Owner management**: add/remove tasks, case-insensitive pet filtering, status filtering, pet with no tasks
 
 **Confidence Level: ★★★★★** — All 26 tests pass across both happy-path and edge-case scenarios.
 
