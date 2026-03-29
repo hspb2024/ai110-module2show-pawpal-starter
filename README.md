@@ -75,7 +75,10 @@ The 26 tests include:
 
 ---
 ## 📸 Demo
-
-
+All of the Streamlit from top to bottom:
+- ![Image 1](pawpal_image1.png)
+- ![Image 2](pawpal_image2.png)
+- ![Image 3](pawpal_image3.png)
+- ![Image 4](pawpal_image4.png)
 
 ---
