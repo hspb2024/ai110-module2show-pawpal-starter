@@ -24,14 +24,6 @@ Your final app should:
 
 ## Getting started
 
-### Setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
 ## Smarter Scheduling
 
 Phase 3 adds four new features to make the scheduler more useful:
@@ -40,6 +32,23 @@ Phase 3 adds four new features to make the scheduler more useful:
 - **Filter by pet or status** — You can view only the tasks for a specific pet, or only tasks that are done or still pending.
 - **Recurring tasks** — Tasks can be set to repeat daily or weekly. When you mark one complete, the next occurrence is automatically added.
 - **Conflict detection** — The scheduler warns you if two tasks are set to start at the exact same time.
+
+## Testing PawPal+
+
+Run the tests with:
+
+```bash
+python3 -m pytest
+```
+
+The 26 tests cover:
+- **Sorting correctness** — tasks return in chronological order; unscheduled tasks sort last
+- **Recurrence logic** — completing a daily/weekly task auto-adds the next occurrence; one-time tasks raise an error
+- **Conflict detection** — flags two tasks at the same time; ignores tasks with no scheduled time
+- **Priority & planning** — plan respects the time budget, skips completed tasks, and puts high-priority tasks first
+- **Pet & Owner management** — add/remove tasks, case-insensitive pet filtering, status filtering, and edge cases like a pet with no tasks
+
+**Confidence Level: ★★★★★** — All 26 tests pass across both happy-path and edge-case scenarios.
 
 ### Suggested workflow
 
