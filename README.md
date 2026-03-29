@@ -1,6 +1,6 @@
 # PawPal+ (Module 2 Project)
 
-You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.
+The application is named PawPal+ and is built using Streamlit. This application is designed to assist a busy pet owner with their pet care planning, considering multiple pets. The application utilizes a priority-first scheduling algorithm, conflict detection, recurring task automation, and filtering.
 
 ## Scenario
 
