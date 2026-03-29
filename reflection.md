@@ -104,10 +104,18 @@ The conflict detector only checks if two tasks are scheduled at exactly the same
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
+I utilized Claude Code to develop an initial UML diagram from my class concepts. Then, I utilized Copilot to assist in writing the code. It was more effective if I provided precise and detailed instructions, such as how to implement a method. Vague instructions were not very effective. Inline suggestions from the Copilot were more effective if I had a precise docstring.
+
+I also maintained individual chat windows for each process to keep the AI focused only on the specific task.
+
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
 - How did you evaluate or verify what the AI suggested?
+
+I chose to do a simple string comparison instead of using datetime as Copilot had suggested, and it worked just fine. I also tested it to confirm this.
+
+I made all the design decisions myself. I let the AI do all the coding, and I just checked to make sure it worked.
 
 ---
 
@@ -118,10 +126,14 @@ The conflict detector only checks if two tasks are scheduled at exactly the same
 - What behaviors did you test?
 - Why were these tests important?
 
+The 26 tests verify sorting by time, recurrence, conflicts, priority planning within a time budget, pet/task management, including edge cases where the pet has no tasks. These tests are important because if the sorting or priority planning logic is flawed, it would result in incorrect plans without any warning.
+
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+Confidence level: ★★★★★ All 26 tests pass. More time would allow me to add tests for duration-based conflicts like where Task A from 8:00 for 30 minutes conflicts with Task B from 8:20 for instance.
 
 ---
 
@@ -131,10 +143,16 @@ The conflict detector only checks if two tasks are scheduled at exactly the same
 
 - What part of this project are you most satisfied with?
 
+Separating the logic layer (`pawpal_system.py`) from the UI (`app.py`) made testing very easy and kept the code clean and simple for all four phases.
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+I would expand the conflict detection to check for duration conflicts, implement an "Edit Task" form for the UI, and implement data persistence to allow the schedule to survive a page reload.
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+Having a clear UML plan and design helped the AI have a clear goal to aim for, resulting in better suggestions and fewer corrections. AI is most effective when the human has already thought through the most important decisions.
