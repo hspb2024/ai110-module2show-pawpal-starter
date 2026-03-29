@@ -33,6 +33,18 @@ Phase 3 adds four new features to make the scheduler more useful:
 - **Recurring tasks** — Tasks can be set to repeat daily or weekly. When you mark one complete, the next occurrence is automatically added.
 - **Conflict detection** — The scheduler warns you if two tasks are set to start at the exact same time.
 
+## After polishing with use of Claude:
+Features
+- Multiple pets: Manage all your pets in one place.
+- Smart scheduling: Important tasks are handled first so nothing critical is missed.
+- Time preferences: Tasks are ordered by morning, afternoon, and evening.
+- Daily timeline: View tasks in the order they’re scheduled.
+- Conflict alerts: Get notified if two tasks overlap.
+- Repeating tasks: Set tasks to repeat daily or weekly automatically.
+- Easy filtering: Quickly view tasks by pet or status.
+- Schedule summary: See a simple explanation of what was scheduled and skipped.
+- Quick complete: Mark tasks as done with one click.
+
 ## Testing PawPal+
 
 Run the tests with:
