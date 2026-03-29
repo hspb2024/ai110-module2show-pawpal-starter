@@ -66,6 +66,68 @@ classDiagram
     Scheduler "1" --> "0..*" Task : schedules
 ```
 
+**Final UML class diagram (updated to match implementation):**
+
+```mermaid
+classDiagram
+    class Owner {
+        +str name
+        +int available_minutes
+        +list~str~ preferences
+        +list~Pet~ pets
+        +add_pet(pet: Pet) None
+        +remove_pet(name: str) None
+        +add_preference(preference: str) None
+        +set_available_time(minutes: int) None
+        +get_all_tasks() list~tuple~
+    }
+
+    class Pet {
+        +str name
+        +str species
+        +int age
+        +list~Task~ tasks
+        +add_task(task: Task) None
+        +remove_task(title: str) None
+        +get_tasks() list~Task~
+        +get_species_defaults() list~str~
+    }
+
+    class Task {
+        +str title
+        +int duration_minutes
+        +str priority
+        +str category
+        +Optional~str~ preferred_time
+        +Optional~str~ scheduled_time
+        +str frequency
+        +Optional~date~ due_date
+        +bool completed
+        +mark_complete() None
+        +is_high_priority() bool
+        +priority_score() int
+        +time_slot_order() int
+        +next_occurrence() Task
+    }
+
+    class Scheduler {
+        +Owner owner
+        +sort_by_time() list~tuple~
+        +filter_by_pet(pet_name: str) list~tuple~
+        +filter_by_status(completed: bool) list~tuple~
+        +mark_task_complete(pet: Pet, task: Task) Optional~Task~
+        +detect_conflicts() list~str~
+        +generate_plan() list~tuple~
+        +explain_plan() str
+    }
+
+    Owner "1" *-- "0..*" Pet : owns
+    Pet "1" *-- "0..*" Task : has
+    Scheduler "1" --> "1" Owner : uses
+```
+
+---
+
 **b. Design changes**
 
 - Did your design change during implementation?
